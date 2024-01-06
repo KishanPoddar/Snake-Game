@@ -85,7 +85,7 @@ function gameEngine() {
     //Part 2: Display the snake and food
     board.innerHTML = "";
     snakeArr.forEach((e, index) => {
-        snakeElement = document.createElement("div");
+        let snakeElement = document.createElement("div");
         snakeElement.style.gridRowStart = e.y;
         snakeElement.style.gridColumnStart = e.x;
         if (index === 0) {
@@ -96,7 +96,7 @@ function gameEngine() {
         board.appendChild(snakeElement);
     });
     //Display the snake
-    foodElement = document.createElement("div");
+    let foodElement = document.createElement("div");
     foodElement.style.gridRowStart = food.y;
     foodElement.style.gridColumnStart = food.x;
     foodElement.classList.add("food");
@@ -121,25 +121,21 @@ window.addEventListener("keydown", e => {
     moveSound.play();
     switch (e.key) {
         case "ArrowUp":
-            console.log("ArrowUp");
             inputDir.x = 0;
             inputDir.y = -1;
             break;
 
         case "ArrowDown":
-            console.log("ArrowDown");
             inputDir.x = 0;
             inputDir.y = 1;
             break;
 
         case "ArrowLeft":
-            console.log("ArrowLeft");
             inputDir.x = -1;
             inputDir.y = 0;
             break;
 
         case "ArrowRight":
-            console.log("ArrowRight");
             inputDir.x = 1;
             inputDir.y = 0;
             break;
